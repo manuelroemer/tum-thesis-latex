@@ -1,0 +1,38 @@
+{
+    "latex-workshop.latex.recipes": [{
+        "name": "pdflatex",
+        "tools": [
+            "pdflatex",
+            "biber",
+            "pdflatex"
+        ]
+    }],
+    "latex-workshop.latex.tools": [{
+        "name": "texify",
+        "command": "texify",
+        "args": [
+            "--synctex",
+            "--pdf",
+            "--tex-option=\"-interaction=nonstopmode\"",
+            "--tex-option=\"-file-line-error\"",
+            "%DOC%.tex"
+        ]
+    }, {
+        "name": "pdflatex",
+        "command": "pdflatex",
+        "args": [
+            "--output-directory=out",
+            "--synctex=1",
+            "%DOC%.tex"
+        ]
+    },{
+        "name": "biber",
+        "command": "biber",
+        "args": [
+            "--input-director=./out",
+            "--output-directory=./out",
+            "%DOCFILE%"
+        ]
+    }],
+    "latex-workshop.latex.outputDir": "./out"
+}
